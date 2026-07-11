@@ -54,13 +54,15 @@ body{
 }
 
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    columns:3;
+    column-gap:20px;
     padding:4rem;
 }
 
 .card{
+    display:inline-block;
+    width:100%;
+    margin-bottom:20px;
     position:relative;
     overflow:hidden;
     cursor:pointer;
@@ -68,8 +70,9 @@ body{
 
 .card img{
     width:100%;
+    height:auto;
     display:block;
-    transition:.6s;
+    transition:transform .6s;
 }
 
 .card:hover img{
@@ -195,8 +198,8 @@ body{
 @media (max-width: 768px){
 
     .gallery{
-        grid-template-columns:1fr;
-        padding:1.5rem;
-    }
+    columns:1;
+    padding:1.5rem;
+}
 
 }
