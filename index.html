@@ -132,21 +132,30 @@
 
     <h2>LET'S WORK.</h2>
 
-    <div class="contact-dropdown">
+    <div class="contact-wrapper">
+        <form id="contactForm" class="contact-form">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Your email" required>
+            </div>
+            <div class="input-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+            </div>
+            <button type="submit" class="button-primary">Send Email</button>
+        </form>
 
-        <button id="contactBtn" class="contact-btn">
-            CONTACT +
-        </button>
-
-        <div id="contactMenu" class="dropdown-content">
-
-            <a href="mailto:oliveblack.1305@gmail.com">
-                Email: oliveblack.1305@gmail.com
-                Instagram: @uodkw_obw
-            </a>
-
+        <div class="contact-dropdown">
+            <button id="contactToggle" class="contact-btn">CONTACT</button>
+            <div id="contactMenu" class="dropdown-content">
+                <a class="button-secondary" href="mailto:oliveblack.1305@gmail.com">Open Email Client</a>
+                <a class="button-secondary" href="https://www.instagram.com/direct/new/?username=uodkw_obw" target="_blank" rel="noreferrer">Instagram DM</a>
+            </div>
         </div>
-
     </div>
 
 </section>

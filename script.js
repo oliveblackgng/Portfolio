@@ -7,18 +7,28 @@ document.addEventListener("mousemove",(e)=>{
 
 });
 
-const contactBtn = document.getElementById("contactBtn");
+const contactForm = document.getElementById("contactForm");
+const contactToggle = document.getElementById("contactToggle");
 const contactMenu = document.getElementById("contactMenu");
 
-contactBtn.addEventListener("click", () => {
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    if(contactMenu.style.maxHeight === "100px"){
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const subject = encodeURIComponent(`Contact from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}%0AEmail: ${email}%0A%0A${message}`);
+    const mailto = `mailto:oliveblack.1305@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailto;
+});
+
+contactToggle.addEventListener("click", () => {
+    if (contactMenu.style.maxHeight === "200px") {
         contactMenu.style.maxHeight = "0px";
-        contactBtn.textContent = "CONTACT +";
+    } else {
+        contactMenu.style.maxHeight = "200px";
     }
-    else{
-        contactMenu.style.maxHeight = "100px";
-        contactBtn.textContent = "CONTACT -";
-    }
-
 });
