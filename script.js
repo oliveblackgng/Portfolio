@@ -8,8 +8,6 @@ document.addEventListener("mousemove",(e)=>{
 });
 
 const contactForm = document.getElementById("contactForm");
-const contactToggle = document.getElementById("contactToggle");
-const contactMenu = document.getElementById("contactMenu");
 
 contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -23,12 +21,4 @@ contactForm.addEventListener("submit", (event) => {
     const mailto = `mailto:oliveblack.1305@gmail.com?subject=${subject}&body=${body}`;
 
     window.location.href = mailto;
-});
-
-contactToggle.addEventListener("click", () => {
-    if (contactMenu.style.maxHeight === "200px") {
-        contactMenu.style.maxHeight = "0px";
-    } else {
-        contactMenu.style.maxHeight = "200px";
-    }
 });
